@@ -1,0 +1,34 @@
+<{includeq file='db:impolling_header.html'}>
+
+<{foreach item=impolling_poll from=$impolling_polls}>
+	<div class="impolling_poll_container">
+		<h1 class="poll-title"><{$impolling_poll.itemLink}></h1>
+		<div class="impolling_poll_info"><{$impolling_poll.poll_info}> <{$smarty.const._CO_IMPOLLING_POLL_USER_ID}> <img src="<{$impolling_images_url}>user.gif" alt="" /> <{$impolling_poll.poll_uid}>
+		<{if $impolling_poll.categories}>
+		<div class="left_main">
+		<div class="impolling_poll_filed_under"><{$smarty.const._CO_IMPOLLING_FILED_UNDER}></div>
+			<div class="impolling_poll_categories">
+				<{foreach item=category from=$impolling_poll.categories name=loop}>
+					<a href="index.php?cid=<{$category.id}>"><{$category.title}></a><{if !$smarty.foreach.loop.last}>, <{/if}>
+			 	<{/foreach}>
+			 </div>
+		</div>
+		<{/if}>
+		</div>
+		<div class="impolling_poll_content">
+			<{$impolling_poll.poll_lead}>
+		</div>
+
+		<div class="impolling_poll_comments">
+			<{$impolling_poll.poll_comment_info}>
+		</div>
+		<{if $impolling_poll.userCanEditAndDelete}>
+			<div class="impolling_admin_links"><{$impolling_poll.editItemLink}><{$impolling_poll.deleteItemLink}></div>
+		<{/if}>
+	</div>
+<{/foreach}>
+<{if $navbar}>
+	<div id="impolling_navbar"><{$smarty.const._MD_IMPOLLING_NAV_PAGES}> <{$navbar}></div>
+<{/if}>
+
+<{includeq file='db:impolling_footer.html'}>

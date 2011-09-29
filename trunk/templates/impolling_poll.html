@@ -1,0 +1,29 @@
+<{includeq file='db:impolling_header.html'}>
+<{if $impolling_poll}>
+<div id="impolling-poll-container">
+	<h1><{$impolling_poll.question}></h1>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_QUESTION}></b>: <{$impolling_poll.question}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_DESCRIPTION}></b></div>
+				<div><{$impolling_poll.description}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_USER_ID}></b>: <{$impolling_poll.user_id}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_BEGIN_TIME}></b>: <{$impolling_poll.begin_time}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_EXPIRE_TIME}></b>: <{$impolling_poll.expire_time}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_VOTES}></b>: <{$impolling_poll.votes}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_VOTERS}></b>: <{$impolling_poll.voters}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_MULTIPLE}></b>: <{$impolling_poll.multiple}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_WEIGHT}></b>: <{$impolling_poll.weight}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_MAIL_STATUS}></b>: <{$impolling_poll.mail_status}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_POLLTYPE}></b>: <{$impolling_poll.polltype}></div>
+		<div><b><{$smarty.const._CO_IMPOLLING_POLL_AUTOBLOCKREMOVE}></b>: <{$impolling_poll.autoblockremove}></div>
+
+</div>
+<{/if}>
+<{if $impolling_poll_results}>
+<{$impolling_poll_results}>
+<{/if}>
+
+<{if $impolling_poll_table}>
+<h1><{$impolling_title}></h1>
+<{$impolling_poll_table}>
+<{/if}>
+<{includeq file='db:impolling_footer.html'}>

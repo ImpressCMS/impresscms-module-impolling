@@ -1,0 +1,16 @@
+<{if $impolling_poll}>
+	<div class="impolling_poll_container">
+		<h1 class="poll-title"><{$impolling_poll.poll_title}></h1>
+		<div class="impolling_poll_info"><{$impolling_poll.poll_info}> <{$smarty.const._CO_IMPOLLING_POLL_USER_ID}> <img src="<{$impolling_images_url}>user.gif" alt="" /> <{$impolling_poll.poll_uid}> <{$smarty.const._CO_IMPOLLING_POST_ON}> <img src="<{$impolling_images_url}>clock.gif" alt="" /> <{$impolling_poll.poll_day}> <{$impolling_poll.poll_day_number}> <{$impolling_poll.poll_month}> <{$impolling_poll.poll_year}> </div>
+		<div class="impolling_poll_content">
+			<{$impolling_poll.poll_content}>
+		</div>
+
+		<div class="impolling_poll_more">
+			<{$smarty.const._CO_IMPOLLING_POST_ALL_POLLS}> <{$smarty.const._CO_IMPOLLING_POLL_USER_ID}> <img src="<{$impolling_images_url}>user-pages.gif" alt="" /> <{$impolling_poll.poll_poller_link}>
+		</div>
+		<{if $impolling_poll.userCanEditAndDelete}>
+			<div class="impolling_admin_links"><{$impolling_poll.editItemLink}><{$impolling_poll.deleteItemLink}></div>
+		<{/if}>
+	</div>
+<{/if}>
